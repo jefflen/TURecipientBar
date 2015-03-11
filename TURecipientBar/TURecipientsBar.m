@@ -632,11 +632,24 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 
 - (IBAction)selectRecipientButton:(UIButton *)sender
 {
-	NSUInteger recipientIndex = [_recipientViews indexOfObject:sender];
-	
-	if (recipientIndex != NSNotFound && [_recipients count] > recipientIndex) {
-        self.selectedRecipient = [_recipients objectAtIndex:recipientIndex];
-	}
+    NSUInteger recipientIndex = [_recipientViews indexOfObject:sender];
+    id<TURecipient> recipient;
+    if (recipientIndex != NSNotFound && [_recipients count] > recipientIndex) {
+       recipient  = [_recipients objectAtIndex:recipientIndex];
+    }
+    
+    BOOL should = YES;
+    if ([self.recipientsBarDelegate respondsToSelector:@selector(recipientsBar:shouldSelectRecipientByTouchUp:)]) {
+        should = [self.recipientsBarDelegate recipientsBar:self shouldSelectRecipientByTouchUp:recipient];
+    }
+    
+    if (should) {
+        self.selectedRecipient = recipient;
+        
+        if ([self.recipientsBarDelegate respondsToSelector:@selector(recipientsBar:didSelectRecipientByTouchUp:)]) {
+            [self.recipientsBarDelegate recipientsBar:self didSelectRecipientByTouchUp:recipient];
+        }
+    }
 }
 
 - (void)selectRecipient:(id<TURecipient>)recipient

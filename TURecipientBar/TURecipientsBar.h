@@ -333,6 +333,25 @@
  */
 - (void)recipientsBar:(TURecipientsBar *)recipientsBar didSelectRecipient:(id<TURecipient>)recipient;
 
+/** Asks the delegate if recipients should be selected by user touch.
+ 
+ Return no to disable selection.
+ 
+ @param recipientsBar The recipient bar that is being edited.
+ @param recipient The recipient being selected.
+ @return `YES` if the recipient should be selected, otherwise, `NO`.
+ */
+- (BOOL)recipientsBar:(TURecipientsBar *)recipientsBar shouldSelectRecipientByTouchUp:(id<TURecipient>)recipient;
+
+/** Tells the delegate that recipient selection has changed by user touch.
+ 
+ Called when the user selects a recipient, either with the back delete key, or by tapping them.
+ 
+ @param recipientsBar The recipient bar that is being edited.
+ @param recipient The recipient that was selected.
+ */
+- (void)recipientsBar:(TURecipientsBar *)recipientsBar didSelectRecipientByTouchUp:(id<TURecipient>)recipient;
+
 /**---------------------------------------------------------------------------------------
  * @name Clicking Buttons
  *  ---------------------------------------------------------------------------------------
