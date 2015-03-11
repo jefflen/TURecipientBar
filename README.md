@@ -1,3 +1,6 @@
+This is a fork from `TURecipientBar` which adds `recipientsBar:didSelectRecipientByTouch:` in `TURecipientsBarDelegate`
+
+
 # ![TURecipientBar](http://f.cl.ly/items/2t2b39213t130o2N2w2S/WordMark.svg) 
 
 [![Version](https://img.shields.io/cocoapods/v/TURecipientBar.svg?style=flat)](http://cocoadocs.org/docsets/TURecipientBar)
