@@ -390,6 +390,20 @@ static void *TURecipientsContext = &TURecipientsContext;
 	}
 }
 
+- (BOOL)recipientsBar:(TURecipientsBar *)recipientsBar shouldSelectRecipient:(id<TURecipient>)recipient byTouchUpInView:(UIView *)view
+{
+    if ([self.delegate respondsToSelector:@selector(recipientsBar:shouldSelectRecipient:byTouchUpInView:)]) {
+        [(id<TURecipientsBarDelegate>)self.delegate recipientsBar:recipientsBar shouldSelectRecipient:recipient byTouchUpInView:view];
+    }
+}
+
+- (void)recipientsBar:(TURecipientsBar *)recipientsBar didSelectRecipient:(id<TURecipient>)recipient byTouchUpInView:(UIView *)view
+{
+    if ([self.delegate respondsToSelector:@selector(recipientsBar:didSelectRecipient:byTouchUpInView:)]) {
+        [(id<TURecipientsBarDelegate>)self.delegate recipientsBar:recipientsBar didSelectRecipient:recipient byTouchUpInView:view];
+    }
+}
+
 - (void)recipientsBarReturnButtonClicked:(TURecipientsBar *)recipientsBar
 {
 	if ([self.delegate respondsToSelector:@selector(recipientsBarReturnButtonClicked:)]) {

@@ -138,7 +138,7 @@
  
  This will both add the recipient to the array of recipients and will also update the view, whether it is in searching mode or not.
  
-@param recipient A recipient to add.
+ @param recipient A recipient to add.
  */
 - (void)addRecipient:(id<TURecipient>)recipient;
 
@@ -341,7 +341,7 @@
  @param recipient The recipient being selected.
  @return `YES` if the recipient should be selected, otherwise, `NO`.
  */
-- (BOOL)recipientsBar:(TURecipientsBar *)recipientsBar shouldSelectRecipientByTouchUp:(id<TURecipient>)recipient;
+- (BOOL)recipientsBar:(TURecipientsBar *)recipientsBar shouldSelectRecipient:(id<TURecipient>)recipient byTouchUpInView:(UIView *)view;
 
 /** Tells the delegate that recipient selection has changed by user touch.
  
@@ -350,7 +350,7 @@
  @param recipientsBar The recipient bar that is being edited.
  @param recipient The recipient that was selected.
  */
-- (void)recipientsBar:(TURecipientsBar *)recipientsBar didSelectRecipientByTouchUp:(id<TURecipient>)recipient;
+- (void)recipientsBar:(TURecipientsBar *)recipientsBar didSelectRecipient:(id<TURecipient>)recipient byTouchUpInView:(UIView *)view;
 
 /**---------------------------------------------------------------------------------------
  * @name Clicking Buttons
