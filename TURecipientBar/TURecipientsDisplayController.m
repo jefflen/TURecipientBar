@@ -392,9 +392,11 @@ static void *TURecipientsContext = &TURecipientsContext;
 
 - (BOOL)recipientsBar:(TURecipientsBar *)recipientsBar shouldSelectRecipient:(id<TURecipient>)recipient byTouchUpInView:(UIView *)view
 {
+    BOOL should = YES;
     if ([self.delegate respondsToSelector:@selector(recipientsBar:shouldSelectRecipient:byTouchUpInView:)]) {
-        [(id<TURecipientsBarDelegate>)self.delegate recipientsBar:recipientsBar shouldSelectRecipient:recipient byTouchUpInView:view];
+        should = [(id<TURecipientsBarDelegate>)self.delegate recipientsBar:recipientsBar shouldSelectRecipient:recipient byTouchUpInView:view];
     }
+    return should;
 }
 
 - (void)recipientsBar:(TURecipientsBar *)recipientsBar didSelectRecipient:(id<TURecipient>)recipient byTouchUpInView:(UIView *)view
