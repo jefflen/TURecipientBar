@@ -2,9 +2,6 @@ This is a fork from `TURecipientBar` which adds delegate methods related to user
 
 ```
 recipientsBar:shouldSelectRecipientByTouchUp:inView:
-```
-and
-```
 recipientsBar:didSelectRecipientByTouchUp:inView:
 ```
 
