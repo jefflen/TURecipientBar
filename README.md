@@ -1,5 +1,6 @@
-This is a fork from `TURecipientBar` which adds `recipientsBar:didSelectRecipientByTouch:` in `TURecipientsBarDelegate`
+This is a fork from `TURecipientBar` which adds delegate methods related to user touch up in `TURecipientsBarDelegate` as following:
 
+`recipientsBar:shouldSelectRecipientByTouchUp:` and `recipientsBar:didSelectRecipientByTouchUp:`
 
 # ![TURecipientBar](http://f.cl.ly/items/2t2b39213t130o2N2w2S/WordMark.svg) 
 
